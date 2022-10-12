@@ -17,7 +17,7 @@ budget_csv = os.path.join("/Users/madin/Desktop", "PyBank","Resources","budget_d
 with open(budget_csv) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=",")
 
-    # Read the header row first (skip this part if there is no header)
+    # Read the header row first 
     csv_header = next(csv_file)
     print(f"Header: {csv_header}")
 
@@ -31,15 +31,15 @@ with open(budget_csv) as csv_file:
 
     # Calculate the net total amount of "Profit/Losses"
         total += int(row[1])
-    # add the current profit/loss amount to profit array
+    # Add the current profit/loss amount to profit array
         profit.append(int(row[1]))
 
-#loop through each month of value of "Profit/Losses" and caculate the change between each two monthes
+# loop through each month of value of "Profit/Losses" and caculate the change between each two monthes
 for i in range(len(profit)-1):
         change = profit[i+1] - profit[i]
         profit_change.append(change)
         
-        #cacualte average change in "Profit/Losses"
+        # Cacualte average change in "Profit/Losses"
         average_change = round(sum(profit_change)/len(profit_change),2)
         
         # if the change is the greatest increase in profit
@@ -65,7 +65,7 @@ print(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_incr
 print(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})")
     
     
-#open the output file to export a text file with the results
+# Open the output file to export a text file with the results
 output_file = os.path.join("/Users/madin/Desktop", "PyBank","Resources", "Financial_Analysis.txt")
 
 with open(output_file, 'w', newline='') as text:
