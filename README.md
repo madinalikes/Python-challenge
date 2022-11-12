@@ -16,7 +16,7 @@
 
 -The greatest decrease in losses (date and amount) over the entire period
 
-##PyPoll
+## PyPoll
 
 *In this challenge, I was tasked with helping a small, rural town modernize its vote-counting process.
 
